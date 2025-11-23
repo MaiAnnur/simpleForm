@@ -4,3 +4,4 @@
 - Backend: Go
 - Frontend: HTMX
 - DB: postgres
+- CSS: tailwind
