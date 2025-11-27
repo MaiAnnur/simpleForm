@@ -34,8 +34,13 @@ func receiveJSONHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	http.HandleFunc("/", serveHTMLHandler)
 	http.HandleFunc("/receive-json", receiveJSONHandler)
 
 	fmt.Println("Server starting on :8080")
 	log.Fatal(http.ListenAndServe(":8080", nil))
+}
+
+func serveHTMLHandler(w http.ResponseWriter, r *http.Request) {
+	http.ServeFile(w, r, "index.html")
 }
